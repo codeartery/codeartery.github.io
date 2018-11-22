@@ -4,12 +4,58 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title>CodeArtery - Snippets.vbs</title>
+  
+  <style>
+  .collapsible {
+      background-color: #777;
+      color: white;
+      cursor: pointer;
+      padding: 18px;
+      width: 100%;
+      border: none;
+      text-align: left;
+      outline: none;
+      font-size: 15px;
+  }
+
+  .active, .collapsible:hover {
+      background-color: #555;
+  }
+
+  .content {
+      padding: 0 18px;
+      display: none;
+      overflow: hidden;
+      background-color: #f1f1f1;
+  }
+</style>
 </head>
 <body>
-  Hello, world!
+
+  <p>Classes:</p>
+  <button class="collapsible">Name - Description</button>
+  <div class="content">
+
+  </div>
+
+  <p>Functions:</p>
+  <button class="collapsible">ShowWindow - Description</button>
+  <div class="content">
+    <script src="https://gist.github.com/codeartery/0ea3a74e92d39ce520cffb05a8b99446.js?file=ShowWindow.vbs"></script>
+  </div>
   
-  <script src="https://gist.github.com/codeartery/0ea3a74e92d39ce520cffb05a8b99446.js?file=ShowWindow.vbs"></script>
   
+  <script>
+    var coll = document.getElementsByClassName("collapsible");
+    for (var i = 0; i < coll.length; i++) {
+      coll[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        content.style.display = (content.style.display === "block") ? "none" : "block";
+        }
+      });
+    }
+  </script>
 </body>
 </html>
