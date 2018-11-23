@@ -1,6 +1,16 @@
+@import url('https://fonts.googleapis.com/css?family=Comfortaa');
+
+html, 
+body {
+  background-color: #fff;
+  font-family: 'Comfortaa', cursive;
+  color: #000;
+}
+
 .collapsible {
+  font-family: 'Comfortaa', cursive;
   background-color: #777;
-  color: white;
+  color: #fff;
   cursor: pointer;
   padding: 18px;
   width: 100%;
@@ -16,7 +26,8 @@
 }
 
 .content {
-  padding: 0 18px;
+  padding: 10px 18px;
+  overflow-y: auto;
   display: none;
   background-color: #f1f1f1;
 }
