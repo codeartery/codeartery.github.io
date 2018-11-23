@@ -5,11 +5,12 @@ body {
   background-color: #fff;
   font-family: 'Comfortaa', cursive;
   color: #000;
+  margin: 10px;
 }
 
 .collapsible {
   font-family: 'Comfortaa', cursive;
-  background-color: #777;
+  background-color: #666;
   color: #fff;
   cursor: pointer;
   padding: 18px;
@@ -22,12 +23,12 @@ body {
 
 .active,
 .collapsible:hover {
-  background-color: #555;
+  background-color: #444;
 }
 
 .content {
   padding: 10px 18px;
   overflow-y: auto;
   display: none;
-  background-color: #f1f1f1;
+  background-color: #f2f2f2;
 }
