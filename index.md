@@ -1,5 +1,8 @@
-# CodeArtery™
-## A collection of code snippets I have created over the years to make life easier.
+## VBScript - Scripting Langauge
+[Home](../)
 
-### Languages
-[VBScript Scripting Langauge](./vbs)
+### Classes
+
+| Name | Description |
+| ---  | --- |
+| FormatString.vbs | <details><summary>Evaluates data between {brackets} or user defined tokens in strings, and allows for easy string appending.</summary><script src="https://gist.github.com/codeartery/8bed157ff8ede837ee423c9ab3ce9562.js"\></script\> |
