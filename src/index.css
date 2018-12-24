@@ -1,18 +1,30 @@
-@import url('https://fonts.googleapis.com/css?family=Comfortaa');
+@import url('https://fonts.googleapis.com/css?family=Major+Mono+Display|Space+Mono');
 
 html, 
 body {
-  background-color: #ddd;
-  font-family: 'Comfortaa', cursive;
+  background-color: #fff;
+  font-family: 'Space Mono', cursive;
+  font-size: 16pt;
   color: #000;
   margin: 50px;
 }
 
+h1, h2 {
+  font-family: 'Major Mono Display', monospace;
+}
+
+a {
+  text-decoration: none;
+  color: red;
+}
+a:hover {
+  font-weight: bold;
+}
+
 .collapsible {
-  font-family: 'Comfortaa', cursive;
-  background-color: rgb(0, 75, 80);
-  color: #fff;
-  cursor: pointer;
+  font-family: inherit;
+  background-color: #035484;
+  color: #ffffffee;
   padding: 18px;  
   border: none;
   text-align: left;
@@ -22,28 +34,35 @@ body {
 
 .active,
 .collapsible:hover {
-  background-color: #333;
+  background-color: #2c8dc6;
   color: #fff;
+  transform: scalex(1.01);
+  cursor: pointer;
 }
 
 .content {  
   padding: 10px 18px;
   overflow-y: auto;
   display: none;
-  background-color: #f2f2f2;
+  background-color: #e4e4e4;
 }
 
-.g-parent {
+#g-parent {
   display: grid;
   grid-template-columns: 200px auto;
   justify-items: stretch;
   align-items: center;
 }
-.g-child-a {
+.g-child {
   grid-column-start: 1;    
+  grid-column-end: 3;
+  display: grid;
+  margin-bottom: 5px;
 }
 
-.g-child-b {
-  grid-column-start: 2;
-  display: grid;
+#search {
+  width: 300px;
+  padding: 5px 20px;
+  font-size: 14pt;
+  margin: 0px 20px;
 }
