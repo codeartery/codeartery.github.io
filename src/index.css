@@ -29,7 +29,8 @@ a:hover {
   border: none;
   text-align: left;
   outline: none;
-  font-size: 15px;  
+  font-size: 15px;
+  transition: 300ms;
 }
 
 .active,
@@ -38,6 +39,9 @@ a:hover {
   color: #fff;
   transform: scalex(1.01);
   cursor: pointer;
+}
+.collapsible:active {
+  transform: scalex(0.90)
 }
 
 .content {  
