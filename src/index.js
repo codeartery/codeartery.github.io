@@ -22,7 +22,7 @@ request.onload = function () {
     eDiv1.className = 'g-child'
     eDiv3 = document.createElement('div')
     eDiv3.className = 'collapsible'
-    eDiv3.innerHTML = '<h3>' + gitName + '</h3><div>' + gitDesc + ' ▼</div>'
+    eDiv3.innerHTML = '<h3>' + gitName + '</h3><div>' + gitDesc + '<div class="collapse-indicator">▼</div></div>'
     eDiv2 = document.createElement('div')
     eDiv2.className = 'content'
     eScript = document.createElement('script')
@@ -42,6 +42,12 @@ function addListeners() {
   for (let i = 0; i < collapseButtons.length; i++) {
     collapseButtons[i].addEventListener('click', function () {
       this.classList.toggle('active')
+      if ( this.classList.contains('active') ) {
+        this.querySelector('.collapse-indicator').innerHTML = '▲'
+      }
+      else {
+        this.querySelector('.collapse-indicator').innerHTML = '▼'
+      }            
       let content = this.nextElementSibling
       if (content.style.display === 'block') {
         content.style.display = 'none'
