@@ -1,3 +1,5 @@
+const BASE_GISTS_URL = 'https://api.github.com/users/codeartery/gists';
+
 // allows async document.write script calls
 document.write = (html) => {
   document.querySelector(
@@ -5,8 +7,25 @@ document.write = (html) => {
   ).parentNode.innerHTML += html;
 };
 
+function copyToClipboard( event, text ) {
+  // prevent div from collapsing or expanding
+  event.stopPropagation();
+
+  // get rid of extra lines and spaces in code
+  text = text.replace(/(^\s*$\s)|(^\s{8})/gm, '');
+  var textarea = document.createElement('textarea');
+  textarea.id = 'temp_element';
+  textarea.style.height = 0;
+  document.body.appendChild(textarea);
+  textarea.value = text;
+  var selector = document.querySelector('#temp_element');
+  selector.select();
+  document.execCommand('copy');
+  document.body.removeChild(textarea);
+}
+
 var request = new XMLHttpRequest();
-request.open('GET', 'https://api.github.com/users/codeartery/gists', true);
+request.open('GET', BASE_GISTS_URL, true);
 request.onload = function () {
   var data = JSON.parse(this.response);  
   const eParent = document.getElementById("g-parent");
@@ -24,7 +43,7 @@ request.onload = function () {
       eDiv1.className = 'g-child';
       eDiv3 = document.createElement('div');
       eDiv3.className = 'collapsible';
-      eDiv3.innerHTML = '<h3>' + gitName + '</h3><div>' + gitDesc + '<div class="collapse-indicator">▼</div></div>';
+      eDiv3.innerHTML = '<h3>' + gitName + '</h3><img src="../bin/copy.svg" alt="Copy" title="Copy" style="position:absolute;top:10px;right:10px;height:24px;width:24px;" onclick="copyToClipboard(event, this.parentElement.parentElement.querySelector(\'.content .file table\').innerText)" /><div>' + gitDesc + '<div class="collapse-indicator">▼</div></div>';
       eDiv2 = document.createElement('div');
       eDiv2.className = 'content';
       eScript = document.createElement('script');

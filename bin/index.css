@@ -28,6 +28,7 @@ a:hover {
 }
 
 .collapsible {
+  position: relative;
   font-family: inherit;
   background-color: #035484;
   color: #ffffffee;
