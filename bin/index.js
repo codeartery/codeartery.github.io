@@ -30,7 +30,7 @@ request.onload = function () {
   var data = JSON.parse(this.response);  
   const eParent = document.getElementById("g-parent");
   var gitId, gitName, gitDesc;
-  var eDiv1, eDiv2, eButton, eScript;
+  var eDiv1, eDiv2, eScript;
   data.forEach(snip => {
     gitId = snip.id;
     gitDesc = snip.description;
@@ -43,7 +43,7 @@ request.onload = function () {
       eDiv1.className = 'g-child';
       eDiv3 = document.createElement('div');
       eDiv3.className = 'collapsible';
-      eDiv3.innerHTML = '<h3>' + gitName + '</h3><img src="../bin/copy.svg" alt="Copy" title="Copy" style="position:absolute;top:10px;right:10px;height:24px;width:24px;" onclick="copyToClipboard(event, this.parentElement.parentElement.querySelector(\'.content .file table\').innerText)" /><div>' + gitDesc + '<div class="collapse-indicator">▼</div></div>';
+      eDiv3.innerHTML = '<h3>' + gitName + '</h3><img src="../bin/copy.svg" alt="Copy the code to your clipboard." title="Copy" style="top:10px" class="g-image" onclick="copyToClipboard(event, this.parentElement.parentElement.querySelector(\'.content .file table\').innerText)" /><div>' + gitDesc + '<img src="../bin/unfold-more.svg" title="Show/hide code" style="bottom:10px" class="collapse-indicator g-image"/></div>';
       eDiv2 = document.createElement('div');
       eDiv2.className = 'content';
       eScript = document.createElement('script');
@@ -66,13 +66,24 @@ function addListeners() {
   const collapseButtons = document.getElementsByClassName('collapsible');
   for (let i = 0; i < collapseButtons.length; i++) {
     collapseButtons[i].addEventListener('click', function () {
+      // collapse all other  items
+      var self = this;
+      document.querySelectorAll('.collapsible').forEach((elem) => {
+        if ( self != elem ) {
+          elem.classList.remove('active')
+          elem.nextElementSibling.style.display = 'none';
+          elem.querySelector('.collapse-indicator').setAttribute('src' ,'../bin/unfold-more.svg');
+        }
+      });
+      
+      // collapse/expand current item
       this.classList.toggle('active');
       if ( this.classList.contains('active') ) {
-        this.querySelector('.collapse-indicator').innerHTML = '▲';
+        this.querySelector('.collapse-indicator').setAttribute('src', '../bin/unfold-less.svg');
       }
       else {
-        this.querySelector('.collapse-indicator').innerHTML = '▼';
-      }            
+        this.querySelector('.collapse-indicator').setAttribute('src' ,'../bin/unfold-more.svg');
+      }       
       let content = this.nextElementSibling;
       if (content.style.display === 'block') {
         content.style.display = 'none';
@@ -80,6 +91,8 @@ function addListeners() {
       else {
         content.style.display = 'block';
       }
+
+      this.scrollIntoView(true)
     })//addEventListener/
   }//for/
 }//addListeners/

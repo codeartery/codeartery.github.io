@@ -71,6 +71,13 @@ a:hover {
   margin-bottom: 5px;
 }
 
+.g-image {
+  position: absolute;
+  right: 10px;
+  height: 24px;
+  width: 24px;  
+}
+
 #search {
   width: 300px;
   padding: 5px 20px;
