@@ -1,7 +1,6 @@
 /* Gist Frame */
 .gist .gist-file {
   border: 0!important;
-  box-shadow: 0 0 20px #1c1c1c;
 }
 .gist .gist-meta {
   background-color: var(--accent)!important;
