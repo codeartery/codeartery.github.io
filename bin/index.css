@@ -1,11 +1,19 @@
-@import url('https://fonts.googleapis.com/css?family=Major+Mono+Display|Space+Mono');
+@import url('https://fonts.googleapis.com/css?family=Major+Mono+Display|Space+Mono|Comfortaa|Montez');
+
+:root {
+  --dark: #121212;
+  --light: #BDC9D5;
+  --lightblend: #BDC9D5EE;
+  --accent: #9B2929;
+  --accentblend: #9B2929DD;
+}
 
 html, 
 body {
-  background-color: #fff;
+  background-color: var(--dark);
   font-family: 'Space Mono', cursive;
   font-size: 16pt;
-  color: #000;
+  color: var(--light);
   margin: 50px;
 }
 
@@ -19,9 +27,27 @@ h3 {
   font-weight: normal;
 }
 
+.h-code {
+  font-family: 'Comfortaa', monospace;
+  font-size: 60pt;
+}
+.h-artery {
+  font-family: 'Montez', cursive;
+  font-size: 98pt;
+}
+.h-artery.p1 {
+  color: var(--accent);
+}
+.h-artery.p1 > span{
+  font-size: 115pt;
+}
+.h-artery.p2 {
+  color: var(--light);
+}
+
 a {
   text-decoration: none;
-  color: red;
+  color: var(--accent);
 }
 a:hover {
   font-weight: bold;
@@ -30,8 +56,8 @@ a:hover {
 .collapsible {
   position: relative;
   font-family: inherit;
-  background-color: #035484;
-  color: #ffffffee;
+  background-color: var(--accentblend);
+  color: var(--light);
   padding: 18px;  
   border: none;
   text-align: left;
@@ -42,8 +68,8 @@ a:hover {
 
 .active,
 .collapsible:hover {
-  background-color: #2c8dc6;
-  color: #fff;
+  background-color: var(--accent);
+  color: var(--light);
   transform: scalex(1.01);
   cursor: pointer;
 }
@@ -55,7 +81,7 @@ a:hover {
   padding: 10px 18px;
   overflow-y: auto;
   display: none;
-  background-color: #e4e4e4;
+  background-color: var(--dark); /*#e4e4e4;*/
 }
 
 #g-parent {
