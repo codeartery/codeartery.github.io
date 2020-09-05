@@ -32,9 +32,9 @@ body {
 }
 
 .navbar-brand > img {
-    height: 60px; 
-    border-radius: 50%; 
-    border: 6px solid var(--lightblend);    
+    height: 60px;    
+    border-radius: 30%; 
+    border: 4px solid var(--lightblend);        
 }
 
 .mi-size {
