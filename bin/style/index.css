@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css?family=Major+Mono+Display|Space+Mono|Comfortaa|Montez');
+
+:root {
+    --dark: #343a40;
+    --light: #e9ecef;
+    --lightblend: #ffffff80;
+    --accent: #9B2929;
+    --accentblend: #9B2929DD;
+}
+
+html,
+body {
+    font-family: 'Comfortaa', monospace;
+    font-size: 16pt;
+}
+
+.dropdown-menu-dark .dropdown-item {
+    padding: 4px 10px;
+}
+
+.dropdown-menu-dark {
+    background-color: #343a40;
+}
+
+.dropdown-menu-dark .dropdown-item {
+    color: #ffffff88;
+}
+
+.dropdown-menu-dark .dropdown-item:hover {
+    background-color: #343a40;
+    color: #ffffff;
+}
+
+.navbar-brand > img {
+    height: 60px; 
+    border-radius: 50%; 
+    border: 6px solid var(--lightblend);    
+}
+
+.mi-size {
+    font-size: 34px;
+    vertical-align: bottom;
+}
+
+.image-youtube {
+    background-image: url('/bin/media/image-youtube.png');
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    height: 100%;
+}
+
+.image-github {
+    background-image: url('/bin/media//image-github.jpg');
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    height: 100%;
+}

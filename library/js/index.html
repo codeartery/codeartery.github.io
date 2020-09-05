@@ -5,12 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>CodeArtery - Home</title>
-    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <title>CodeArtery - Library</title>
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" type="text/css" href="/bin/style/index.css">
+    <link rel="stylesheet" type="text/css" href="/bin/style/library.css">
 </head>
 
 <body>
@@ -44,55 +44,27 @@
     </nav>
 
     <main class="container mt-5">
-        <section class="jumbotron">
-            <h3>Welcome</h3>
-            <p>
-                This website is a portal to programming works by Jeremy England.
-                Feel free to browse around.
-            </p>
+        <section class="jumbotron bg-dark text-light">
+            <h2 id="libraryLang">Loading...</h2>
+            A collection of code snippets I have created over the years to make life easier.
         </section>
 
-        <section class="container">
-            <div class="row mv-2 p-3 bg-light">
-                <div class="row no-gutters">
-                    <div class="col-md-4">
-                        <div class="card-img image-youtube"></div>
-                    </div>
-                    <div class="col-md-8">
-                        <div class="card-body">
-                            <h5 class="card-title">Learn Programming</h5>
-                            <p class="card-text">Watch video tutorials on YouTube that teach various programming
-                                languages
-                                like VBScript, Java, Python, HTML, etc...</p>
-                            <a href="https://www.youtube.com/channel/UCVb7fxuISbolbu5zCC6HBNg" class="btn btn-primary"
-                                target="_blank">Start Learning<span
-                                    class="material-icons material-icons mi-size pl-2">launch</span>
-                            </a>
-                        </div>
-                    </div>
+        <section id="g-parent">
+            <!--
+            <div class="g-child">
+                <div class="collapsible">
+                    <h3>EXAMPLE_NAME.ext</h3>
+                    <div>EXAMPLE_DESCRIPTION ▼</div>
+                </div>
+                <div class="content">
+                    <script src="https://gist.github.com/codeartery/GISTS_ID.js"></script>
                 </div>
             </div>
-
-            <div class="row mv-2 p-3 bg-light">
-                <div class="row no-gutters">
-                    <div class="col-md-4">
-                        <div class="card-img image-github"></div>
-                    </div>
-                    <div class="col-md-8">
-                        <div class="card-body">
-                            <h5 class="card-title">Github Profile</h5>
-                            <p class="card-text">Contains projects, tutorial files, and a collection of code snippets
-                                from
-                                various programming languages.</p>
-                            <a href="https://github.com/simply-coded?tab=repositories" class="btn btn-primary" target="_blank">View
-                                Page<span class="material-icons material-icons mi-size pl-2">launch</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            -->
         </section>
     </main>
+
+    <script src="/bin/script/library.js"></script>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
