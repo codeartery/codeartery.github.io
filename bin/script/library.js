@@ -3,7 +3,8 @@ const uriBaseGist = 'https://gist.github.com/codeartery/';
 
 const extToLang = {
     'js': 'JavaScript (.js)',
-    'vbs': 'VBScript (.vbs)'
+    'vbs': 'VBScript (.vbs)',
+    'ps1': 'PowerShell (.ps1)'
 }
 
 // allows async document.write script calls
