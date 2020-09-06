@@ -40,6 +40,11 @@
   margin-bottom: 5px;
 }
 
+.g-title {
+    font-size: 18pt;
+    font-weight: bold;
+}
+
 .g-icons {
   position: absolute;
   right: 10px;
@@ -47,7 +52,6 @@
   width: 24px;
 }
 
-.g-title {
-    font-size: 18pt;
-    font-weight: bold;
+.g-icons:hover {
+    color: var(--primary);
 }

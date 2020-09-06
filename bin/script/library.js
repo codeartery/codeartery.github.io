@@ -20,6 +20,8 @@ function copyToClipboard(event, text) {
 
     // get rid of extra lines and spaces in code
     text = text.replace(/(^\s*$\s)|(^\s{8})/gm, '');
+
+    // copy to clipboard
     var textarea = document.createElement('textarea');
     textarea.id = 'temp_element';
     textarea.style.height = 0;
@@ -29,6 +31,9 @@ function copyToClipboard(event, text) {
     selector.select();
     document.execCommand('copy');
     document.body.removeChild(textarea);
+
+    // alert user
+    $.notify({message:'Source code copied to clipboard.'}, {type:'primary'});
 }
 
 var request = new XMLHttpRequest();
