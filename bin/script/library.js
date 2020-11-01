@@ -92,15 +92,15 @@ function addListeners() {
             var self = this;
             document.querySelectorAll('.collapsible').forEach((elem) => {
                 if (self != elem) {
-                    elem.classList.remove('active')
+                    elem.classList.remove('g-active')
                     elem.nextElementSibling.style.display = 'none';
                     elem.querySelector('.g-icons').classList.remove('md-light');
                 }
             });
 
             // collapse/expand current item
-            this.classList.toggle('active');
-            if (this.classList.contains('active')) {
+            this.classList.toggle('g-active');
+            if (this.classList.contains('g-active')) {
                 this.querySelector('.g-icons').classList.add('md-light');
             } else {
                 this.querySelector('.g-icons').classList.remove('md-light');

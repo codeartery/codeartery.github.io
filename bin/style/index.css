@@ -5,6 +5,7 @@
     --light: #e9ecef;
     --lightblend: #ffffff80;
     --primary: #007bff;    
+    --brand: #421014;
 }
 
 html,
@@ -13,12 +14,24 @@ body {
     font-size: 16pt;
 }
 
+.active:hover {
+    color: #343a40!important;
+}
+
+.border-brand {
+    box-shadow: 0px 10px 15px -15px black;
+}
+
+.border-nav {
+    box-shadow: 0px 10px 30px -30px black;
+}
+
 .dropdown-menu-dark .dropdown-item {
     padding: 4px 10px;
 }
 
 .dropdown-menu-dark {
-    background-color: #343a40;
+    background-color: #000000;
 }
 
 .dropdown-menu-dark .dropdown-item {
@@ -26,14 +39,14 @@ body {
 }
 
 .dropdown-menu-dark .dropdown-item:hover {
-    background-color: #343a40;
+    background-color: #421014;
     color: #ffffff;
 }
 
 .navbar-brand > img {
-    height: 60px;    
-    border-radius: 30%; 
-    border: 4px solid var(--lightblend);        
+    height: 80px;
+    border-radius: 100%;
+    border: 6px solid #cccccc;       
 }
 
 .mi-size {
@@ -47,6 +60,7 @@ body {
     background-position: top;
     background-size: cover;
     height: 100%;
+    box-shadow: 0px 10px 30px -30px black;
 }
 
 .image-github {
@@ -55,4 +69,5 @@ body {
     background-position: top;
     background-size: cover;
     height: 100%;
+    box-shadow: 0px 10px 30px -30px black;
 }

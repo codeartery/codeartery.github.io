@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>CodeArtery - Library</title>
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">    
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" type="text/css" href="/bin/style/index.css">
     <link rel="stylesheet" type="text/css" href="/bin/style/library.css">
@@ -15,8 +15,8 @@
 
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <span class="navbar-brand"><img src="/bin/media/logo.png" alt="CodeArtery"/></span>
+    <nav class="navbar navbar-expand-lg navbar-light border-nav m-2">
+        <div class="navbar-brand"><img src="/bin/media/logo.png" alt="CodeArtery"/></div>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
             aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -25,12 +25,12 @@
             <ul class="navbar-nav">
                 <li class="nav-item">
                     <a class="nav-link" href="/"><span
-                            class="material-icons material-icons mi-size pr-1">house</span>home</a>
+                            class="material-icons mi-size pr-1">house</span>home</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="/" id="navbarDropdownMenuLink" role="button"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <span class="material-icons material-icons mi-size pr-2">menu_book</span>library
+                        <span class="material-icons mi-size pr-2">menu_book</span>library
                     </a>
                     <div class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdownMenuLink">
                         <a class="dropdown-item" href="/library/js"><span class="material-icons material-icons mi-size pr-2">text_snippet</span>javascript</a>
@@ -42,8 +42,8 @@
         </div>
     </nav>
 
-    <main class="container mt-5">
-        <section class="jumbotron bg-dark text-light">
+    <main class="container my-5">
+        <section class="jumbotron bg-light text-dark border-brand">
             <h2 id="libraryLang">Loading...</h2>
             A collection of code snippets I have created over the years to make life easier.
         </section>
@@ -67,7 +67,9 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
     <script src="/bin/script/bootstrap-notify.min.js"></script>
+    <script src="/bin/script/index.js"></script>
     <script src="/bin/script/library.js"></script>
+    
 </body>
 
 </html>

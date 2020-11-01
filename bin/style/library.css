@@ -1,6 +1,6 @@
 .collapsible {
   position: relative;  
-  background-color: var(--light);
+  background-color: var(--lightblend);
   color: var(--dark);
   padding: 18px;  
   border: none;
@@ -9,10 +9,9 @@
   transition: 200ms;
 }
 
-.active,
+.g-active,
 .collapsible:hover {
-  background-color: var(--dark);
-  color: var(--light);
+  box-shadow: 0px 10px 15px -15px var(--brand);
   transform: scalex(1.01);
   cursor: pointer;
 }
