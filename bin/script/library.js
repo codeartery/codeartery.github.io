@@ -19,7 +19,7 @@ function copyToClipboard(event, text) {
     event.stopPropagation();
 
     // get rid of extra lines and spaces in code
-    // text = text.replace(/(^\s*$\s)|(^\s{8})/gm, '');
+    text = text.replace(/^\t/gm, '');
 
     // copy to clipboard
     var textarea = document.createElement('textarea');
