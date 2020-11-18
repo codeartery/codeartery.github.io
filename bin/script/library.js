@@ -14,13 +14,15 @@ document.write = (html) => {
     ).parentNode.innerHTML += html;
 };
 
-function copyToClipboard(event, text) {
+function copyToClipboard(event, self) {
     // prevent div from collapsing or expanding
     event.stopPropagation();
 
-    // get rid of extra lines and spaces in code
-    text = text.replace(/^\t/gm, '');
-
+    // get text
+    var lines = [];
+    self.parentElement.parentElement.querySelectorAll('.content .file table td:nth-child(2)').forEach(td => lines.push(td.innerText));    
+    var text = lines.join('\r\n');
+    
     // copy to clipboard
     var textarea = document.createElement('textarea');
     textarea.id = 'temp_element';
@@ -63,7 +65,7 @@ request.onload = function () {
             eDiv3.className = 'collapsible';
             eDiv3.innerHTML = `
                 <div class="g-title">${gitName}</div>
-                <span class="material-icons g-icons" title="Copy code." style="top:15px" onclick="copyToClipboard(event, this.parentElement.parentElement.querySelector('.content .file table').innerText)">content_copy</span>
+                <span class="material-icons g-icons" title="Copy code." style="top:15px" onclick="copyToClipboard(event, this)">content_copy</span>
                 <span class="material-icons g-icons" title="Show/hide code." style="bottom:15px">code</span>
                 <div>${gitDesc}</div>`;
             eDiv2 = document.createElement('div');
