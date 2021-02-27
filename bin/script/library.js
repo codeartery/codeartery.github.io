@@ -38,64 +38,6 @@ function copyToClipboard(event, self) {
     $.notify({message:'Source code copied to clipboard.'}, {type:'primary'});
 }
 
-var request = new XMLHttpRequest();
-request.open('GET', uriBaseApi, true);
-request.onload = function () {
-
-    // set language for page
-    var libraryLang = /library\/(\w+)/.exec(location.pathname)[1];
-    document.title = 'CodeArtery - Library.' + libraryLang;
-    document.getElementById('libraryLang').innerText = extToLang[libraryLang];
-
-    var data = JSON.parse(this.response);
-    const eParent = document.getElementById('g-parent');
-    const eTemplate = document.querySelector('template');
-    var gitId, gitName, gitDesc;
-    var eDiv1, eDiv2, eScript;
-    data.forEach(snip => {
-        gitId = snip.id;
-        gitDesc = snip.description;
-        gitName = Object.keys(snip.files)[0];
-
-        // only display gist if its language matches the current page
-        if (libraryLang == gitName.slice(gitName.lastIndexOf('.') + 1)) {
-            // create collapsible gist entry
-            
-            var eContent = eTemplate.content.cloneNode(true);
-            eContent.querySelector('.g-title').innerText = gitName;
-            eContent.querySelector('.g-desc').innerText = gitDesc;
-            eContent.querySelector('.g-script').src = uriBaseGist + gitId + '.js';
-            eParent.appendChild(eContent);
-            
-            /*
-            eDiv1 = document.createElement('div');
-            eDiv1.className = 'g-child';
-            eDiv3 = document.createElement('div');
-            eDiv3.className = 'collapsible';
-            eDiv3.innerHTML = `
-                <div class="g-title">${gitName}</div>
-                <span class="material-icons g-icons" title="Copy code." style="top:15px" onclick="copyToClipboard(event, this)">content_copy</span>
-                <span class="material-icons g-icons" title="Show/hide code." style="bottom:15px">code</span>
-                <div>${gitDesc}</div>`;
-            eDiv2 = document.createElement('div');
-            eDiv2.className = 'content';
-            eScript = document.createElement('script');
-            eScript.src = uriBaseGist + gitId + '.js';
-            eDiv2.appendChild(eScript);
-            eDiv1.appendChild(eDiv3);
-            eDiv1.appendChild(eDiv2);
-            eParent.appendChild(eDiv1);
-            */
-        } //if/
-
-    }); //forEach/
-
-    addListeners();
-
-}; //onload/
-
-request.send();
-
 function addListeners() {
     const collapseButtons = document.getElementsByClassName('collapsible');
     for (let i = 0; i < collapseButtons.length; i++) {
@@ -128,3 +70,42 @@ function addListeners() {
         }) //addEventListener/
     } //for/
 } //addListeners/
+
+
+var request = new XMLHttpRequest();
+request.open('GET', uriBaseApi, true);
+request.onload = function () {
+
+    // set language for page
+    var libraryLang = /library\/(\w+)/.exec(location.pathname)[1];
+    document.title = 'CodeArtery - Library.' + libraryLang;
+    document.getElementById('libraryLang').innerText = extToLang[libraryLang];
+
+    var data = JSON.parse(this.response);
+    const eParent = document.getElementById('g-parent');
+    const eTemplate = document.querySelector('template');
+
+    data.forEach(snip => {
+        var gitId = snip.id;
+        var gitDesc = snip.description;
+        var gitName = Object.keys(snip.files)[0];
+
+        // only display gist if its language matches the current page
+        if (libraryLang == gitName.slice(gitName.lastIndexOf('.') + 1)) {
+            
+            // create collapsible gist entry from template
+            var eContent = eTemplate.content.cloneNode(true);
+            eContent.querySelector('.g-title').innerText = gitName;
+            eContent.querySelector('.g-desc').innerText = gitDesc;
+            eContent.querySelector('.g-script').src = uriBaseGist + gitId + '.js';
+            eParent.appendChild(eContent);
+            
+        } //if/
+
+    }); //forEach/
+
+    addListeners();
+
+}; //onload/
+
+request.send();
