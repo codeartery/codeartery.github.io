@@ -49,17 +49,19 @@
         </section>
 
         <section id="g-parent">
-            <!--
-            <div class="g-child">
-                <div class="collapsible">
-                    <h3>EXAMPLE_NAME.ext</h3>
-                    <div>EXAMPLE_DESCRIPTION ▼</div>
+            <template>
+                <div class="g-child">
+                    <div class="collapsible">
+                        <div class="g-title">TEMPLATE_NAME.EXT</div>
+                        <span class="material-icons g-icons" title="Copy code." style="top:15px" onclick="copyToClipboard(event, this)">content_copy</span>
+                        <span class="material-icons g-icons" title="Show/hide code." style="bottom:15px">code</span>
+                        <div class="g-desc">TEMPLATE_DESCRIPTION</div>    
+                    </div>
+                    <div class="content">
+                        <script class="g-script" src="TEMPLATE_GISTURL.js"></script>
+                    </div>
                 </div>
-                <div class="content">
-                    <script src="https://gist.github.com/codeartery/GISTS_ID.js"></script>
-                </div>
-            </div>
-            -->
+            </template>
         </section>
     </main>
 
@@ -69,7 +71,7 @@
     <script src="/bin/script/bootstrap-notify.min.js"></script>
     <script src="/bin/script/index.js"></script>
     <script src="/bin/script/library.js"></script>
-
+    
 </body>
 
 </html>

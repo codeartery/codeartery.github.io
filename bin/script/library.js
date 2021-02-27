@@ -48,7 +48,8 @@ request.onload = function () {
     document.getElementById('libraryLang').innerText = extToLang[libraryLang];
 
     var data = JSON.parse(this.response);
-    const eParent = document.getElementById("g-parent");
+    const eParent = document.getElementById('g-parent');
+    const eTemplate = document.querySelector('template');
     var gitId, gitName, gitDesc;
     var eDiv1, eDiv2, eScript;
     data.forEach(snip => {
@@ -59,6 +60,14 @@ request.onload = function () {
         // only display gist if its language matches the current page
         if (libraryLang == gitName.slice(gitName.lastIndexOf('.') + 1)) {
             // create collapsible gist entry
+            
+            var eContent = eTemplate.content.cloneNode(true);
+            eContent.querySelector('.g-title').innerText = gitName;
+            eContent.querySelector('.g-desc').innerText = gitDesc;
+            eContent.querySelector('.g-script').src = uriBaseGist + gitId + '.js';
+            eParent.appendChild(eContent);
+            
+            /*
             eDiv1 = document.createElement('div');
             eDiv1.className = 'g-child';
             eDiv3 = document.createElement('div');
@@ -76,6 +85,7 @@ request.onload = function () {
             eDiv1.appendChild(eDiv3);
             eDiv1.appendChild(eDiv2);
             eParent.appendChild(eDiv1);
+            */
         } //if/
 
     }); //forEach/
