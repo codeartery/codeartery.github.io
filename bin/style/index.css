@@ -26,27 +26,26 @@ body {
     box-shadow: 0px 10px 30px -30px black;
 }
 
-.dropdown-menu-dark .dropdown-item {
-    padding: 4px 10px;
-}
-
 .dropdown-menu-dark {
     background-color: #000000;
 }
 
 .dropdown-menu-dark .dropdown-item {
+    background-color: #000000;
     color: #ffffff88;
+    padding: 4px 10px;
 }
 
 .dropdown-menu-dark .dropdown-item:hover {
-    background-color: #421014;
     color: #ffffff;
 }
 
 .navbar-brand > img {
-    height: 80px;
-    border-radius: 100%;
-    border: 6px solid #cccccc;       
+    height: 65px;
+    border-radius: 50%;
+    border: 6px solid #cccccc;
+    background-color: black;
+    padding: 5px;
 }
 
 .mi-size {
