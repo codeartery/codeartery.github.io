@@ -1,72 +1,67 @@
 @import url('https://fonts.googleapis.com/css?family=Major+Mono+Display|Space+Mono|Comfortaa|Montez');
-
+ 
 :root {
-    --dark: #343a40;
-    --light: #e9ecef;
+    --dark: #000000ff;
+    --darkblend:#00000080;
+    --light: #ffffffff;
     --lightblend: #ffffff80;
-    --primary: #007bff;    
-    --brand: #421014;
 }
-
+ 
 html,
 body {
     font-family: 'Comfortaa', monospace;
-    font-size: 16pt;
+    font-size: 1.1rem;
 }
-
-.active:hover {
-    color: #343a40!important;
-}
-
+ 
 .border-brand {
-    box-shadow: 0px 10px 15px -15px black;
+    box-shadow: 0px 10px 15px -15px var(--dark);
 }
-
+ 
 .border-nav {
-    box-shadow: 0px 10px 30px -30px black;
+    box-shadow: 0px 10px 30px -30px var(--dark);
 }
-
+ 
 .dropdown-menu-dark {
-    background-color: #000000;
+    background-color: var(--dark);
 }
-
-.dropdown-menu-dark .dropdown-item {
-    background-color: #000000;
-    color: #ffffff88;
-    padding: 4px 10px;
+ 
+.dropdown-item {
+    color: var(--lightblend);
+    padding: 5px 10px;
 }
-
-.dropdown-menu-dark .dropdown-item:hover {
-    color: #ffffff;
+ 
+.dropdown-item:hover {
+    background-color: var(--dark);
+    color: var(--light);
 }
-
+ 
 .navbar-brand > img {
     height: 65px;
     border-radius: 50%;
-    border: 6px solid #cccccc;
-    background-color: black;
+    border: 6px solid var(--lightblend);
+    background-color: var(--dark);
     padding: 5px;
 }
-
+ 
 .mi-size {
-    font-size: 34px;
+    font-size: 2rem;
     vertical-align: bottom;
 }
-
+ 
 .image-youtube {
     background-image: url('/bin/media/image-youtube.png');
     background-repeat: no-repeat;
     background-position: top;
     background-size: cover;
     height: 100%;
-    box-shadow: 0px 10px 30px -30px black;
+    box-shadow: 0px 10px 30px -30px var(--dark);
 }
-
+ 
 .image-github {
     background-image: url('/bin/media//image-github.jpg');
     background-repeat: no-repeat;
     background-position: top;
     background-size: cover;
     height: 100%;
-    box-shadow: 0px 10px 30px -30px black;
+    box-shadow: 0px 10px 30px -30px var(--dark);
 }

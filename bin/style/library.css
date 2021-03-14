@@ -11,7 +11,7 @@
 
 .g-active,
 .collapsible:hover {
-  box-shadow: 0px 10px 15px -15px var(--brand);
+  box-shadow: 0px 10px 15px -15px var(--dark);
   transform: scalex(1.01);
   cursor: pointer;
 }
@@ -40,17 +40,18 @@
 }
 
 .g-title {
-    font-size: 18pt;
+    font-size: 1.3rem;
     font-weight: bold;
 }
 
-.g-icons {
+.g-copy {
   position: absolute;
+  top: 7px;
   right: 10px;
   height: 24px;
   width: 24px;
 }
 
-.g-icons:hover {
-    color: var(--primary);
+.g-copy:hover {
+    color: var(--darkblend);
 }
