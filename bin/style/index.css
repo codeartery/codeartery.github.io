@@ -11,7 +11,7 @@ html,
 body {
     font-family: 'Comfortaa', monospace;
     font-size: 1.1rem;
-    background-color: papayawhip;
+    background-color: silver;
 }
  
 .border-brand {
@@ -40,7 +40,7 @@ body {
 .navbar-brand > img {
     height: 65px;
     border-radius: 50%;
-    border: 6px solid var(-lightblend);
+    border: 6px solid var(--lightblend);
     padding: 5px;
 }
  
