@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css?family=Comfortaa');
+
+:root {
+    --c-bg: hsl(0, 0%, 100%, 1);
+    --c-bga: hsl(0, 0%, 90%, 1);
+    --c-bgs: hsl(0, 0%, 70%, .8);
+
+    --c-fg: hsl(0, 0%, 0%, 1);
+    --c-fga: hsl(0, 58%, 38%, 1);
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: var(--c-bg);
+    font-family: 'Comfortaa', sans-serif;
+    font-size: 1.25rem;
+}
+
+header {
+    display: grid;
+    grid-template-columns: 100px auto;
+    align-items: center;
+    margin: 0 30px;
+}
+
+.nav-logo {
+    height: 80px;
+}
+
+nav {
+    width: 100%;
+    font-size: 0;
+}
+
+nav:hover {
+    box-shadow: 0px 10px 10px -10px var(--c-bga);
+}
+
+.nav-item {
+    display: inline-block;
+    text-decoration: none;
+    color: var(--c-fg);
+    padding: .75rem 2rem;
+    font-size: 1.7rem;
+    font-weight: 900;
+    position: relative;
+}
+
+.nav-item:hover {
+    background-color: var(--c-bga);
+}
+
+.nav-item > span {
+    cursor: default;
+}
+.nav-item:hover > .nav-items,
+.nav-item:active > .nav-items,
+.nav-item:focus > .nav-items {
+    display: block;
+}
+
+.nav-items {
+    background-color: var(--c-bga);
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+}
+.nav-items > .nav-item {
+    display: block;
+    text-align: right;
+}
+.nav-items > .nav-item:hover {
+    background-color: var(--c-bgs);
+}
+.menu {
+    height: 60px;
+    fill: var(--c-red);
+    stroke: var(--c-dark);
+}
+.menu:hover {
+    stroke: var(--c-red);
+}
+.menu > * {
+    transition: transform 100ms ease-out;
+}
+.menu:active > .menu-top {
+    transform: translateY(1px)
+}
+.menu:active > .menu-btm {
+    transform: translateY(-1px)
+}

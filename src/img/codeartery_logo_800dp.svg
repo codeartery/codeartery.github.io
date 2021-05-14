@@ -1,0 +1,11 @@
+<svg class="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800">
+    <path class="logo-gate" d="M 370 430 Q 370 380 340 300 Q 455 300 500 330 C 575 380 575 470 500 525 Q 455 555 340 555 L 340 555 Q 370 470 370 430 Z" />
+    <path class="logo-path" d="M 270 220 L 270 350 L 330 350 L 330 325 L 295 325 L 295 220 Z M 105 535 L 255 535 L 255 490 L 340 490 L 340 465 L 255 465 L 255 440 L 350 440 L 350 415 L 230 415 L 230 465 L 210 465 L 210 395 L 340 395 L 340 370 L 210 370 L 210 330 L 185 330 L 185 370 L 125 370 L 125 420 L 150 420 L 150 395 L 185 395 L 185 490 L 230 490 L 230 510 L 105 510 Z M 270 510 L 330 510 L 330 510 L 330 535 L 295 535 L 295 655 L 195 655 L 195 635 L 195 630 L 270 630 L 270 510 Z" />
+    <path class="logo-path" d="M 690 415 L 575 415 L 575 440 L 690 440 Z" />
+    <circle class="logo-path" cx="725" cy="427" r="38" />
+    <circle class="logo-node" cx="725" cy="427" r="28" fill="#9b2929" />
+    <circle class="logo-path" cx="283" cy="185" r="38" />
+    <circle class="logo-node" cx="283" cy="185" r="28" fill="#9b2929" />
+    <circle class="logo-path" cx="70" cy="521" r="38" />
+    <circle class="logo-node" cx="70" cy="521" r="28" fill="#9b2929" />
+</svg>
