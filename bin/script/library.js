@@ -71,7 +71,7 @@ request.open('GET', uriBaseApi, true);
 request.onload = function () {
 
     // set language for page
-    var libraryLang = /library\/(\w+)/.exec(location.pathname)[1];
+    var libraryLang = /snippets\/(\w+)/.exec(location.pathname)[1];
     document.title = 'CodeArtery - Library.' + libraryLang;
     document.getElementById('libraryLang').innerText = extToLang[libraryLang];
 

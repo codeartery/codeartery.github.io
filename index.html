@@ -11,20 +11,33 @@
 <body>
     <header>
         <img class="nav-logo" src="/src/img/codeartery_logo_800dp.svg" />
+        <input type="checkbox" id="nav-menu-toggle" name="nav-menu-toggle" />
         <nav>
-            <a class="nav-item" href="/">home</a>
-            <div class="nav-item">
+            <a class="nav-item" tabindex="1" href="/">home</a>
+            <div class="nav-item" tabindex="2">
                 <span>snippets</span>
                 <div class="nav-items">
-                    <a class="nav-item" href="/library/js">/js</a>
-                    <a class="nav-item" href="/library/ps1">/ps1</a>
-                    <a class="nav-item" href="/library/vbs">/vbs</a>
+                    <a class="nav-item" tabindex="3" href="/snippets/js">/js</a>
+                    <a class="nav-item" tabindex="4" href="/snippets/ps1">/ps1</a>
+                    <a class="nav-item" tabindex="5" href="/snippets/vbs">/vbs</a>
                 </div>
             </div>
         </nav>
+        <label class="nav-menu" for="nav-menu-toggle">
+            <svg class="menu" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#000" stroke="#000">
+                <rect class="menu-top" x="3" y="5" height="2px" width="18px" />
+                <rect class="menu-mid" x="3" y="11" height="2px" width="18px" />
+                <rect class="menu-btm" x="3" y="17" height="2px" width="18px" />
+            </svg>
+        </label>
     </header>
     <main>
         
+        <div class="container">
+            <h2>Welcome,</h2>
+            <p>This website is a portal to programming works by Jeremy England. Feel free to browse around.</p>
+        </div>
+
     </main>
 </body>
 
