@@ -1,11 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Comfortaa');
 
 :root {
-    --c-bg: hsl(0, 0%, 100%, 1);
-    --c-bga: hsl(0, 0%, 90%, 1);
-    --c-bgs: hsl(0, 0%, 70%, .8);
-
-    --c-fg: hsl(0, 0%, 0%, 1);
+    --c-bg1: hsl(0, 0%, 100%, 1);
+    --c-bg2: hsl(0, 0%, 90%, 0.5);
+    --c-bg3: hsl(0, 0%, 90%, 1);
+    --c-bg4: hsl(0, 0%, 70%, 0.8);
+    
+    --c-fg1: hsl(0, 0%, 0%, 1);
     --c-fga: hsl(0, 58%, 38%, 1);
 }
 
@@ -17,7 +18,7 @@
 
 body {
     margin: 0;
-    background-color: var(--c-bg);
+    background-color: var(--c-bg1);
     font-family: 'Comfortaa', sans-serif;
     font-size: 1.25rem;
 }
@@ -43,21 +44,25 @@ nav {
 }
 
 nav:hover {
-    box-shadow: 0px 10px 10px -10px var(--c-bga);
+    box-shadow: 0px 10px 10px -10px var(--c-bg3);
 }
 
 .nav-item {
     display: inline-block;
     text-decoration: none;
-    color: var(--c-fg);
+    color: var(--c-fg1);
     padding: .75rem 2rem;
     font-size: 1.7rem;
     font-weight: 900;
     position: relative;
 }
 
+.nav-item.active {
+    box-shadow: 0px 10px 10px -10px var(--c-bg3);
+}
+
 .nav-item:hover {
-    background-color: var(--c-bga);
+    background-color: var(--c-bg3);
 }
 
 .nav-item>span {
@@ -71,8 +76,8 @@ nav:hover {
 }
 
 .nav-items {
-    background-color: var(--c-bga);
-    box-shadow: 0 3px 0px 3px var(--c-bg);
+    background-color: var(--c-bg3);
+    border-top: none;
     display: none;
     position: absolute;
     top: 100%;
@@ -86,7 +91,7 @@ nav:hover {
 }
 
 .nav-items>.nav-item:hover {
-    background-color: var(--c-bgs);
+    background-color: var(--c-bg4);
 }
 
 .nav-menu {
@@ -96,12 +101,13 @@ nav:hover {
 }
 
 .menu {
+    cursor: pointer;
     height: inherit;
     transition: transform 100ms ease-out;
 }
 
 .menu:hover {
-    fill: var(--c-fga);
+    opacity: 0.7;
 }
 
 .menu:active>.menu-top {
@@ -118,17 +124,17 @@ main {
 }
 
 .container {
-    background-color: hsl(0deg 0% 90% / 50%);
-    box-shadow: 0 10px 5px -10px var(--c-fg);
+    background-color: var(--c-bg2);
+    box-shadow: 0 10px 5px -10px var(--c-bg4);
     padding: 20px 30px;
     margin: 40px 0;  
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 600px) {
 
     header {
         grid-template-rows: 100px auto;
-        box-shadow: 0px 10px 10px -10px var(--c-bga);
+        box-shadow: 0px 10px 10px -10px var(--c-bg3);
     }
 
     .nav-menu {

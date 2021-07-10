@@ -20,7 +20,7 @@ function copyToClipboard(event, self) {
 
     // get text
     var lines = [];
-    self.parentElement.parentElement.querySelectorAll('.content .file table td:nth-child(2)').forEach(td => lines.push(td.innerText));    
+    self.parentElement.parentElement.querySelectorAll('.g-content .file table td:nth-child(2)').forEach(td => lines.push(td.innerText));    
     var text = lines.join('\r\n');
     
     // copy to clipboard
@@ -35,16 +35,21 @@ function copyToClipboard(event, self) {
     document.body.removeChild(textarea);
 
     // alert user
-    $.notify({message:'Source code copied to clipboard.'}, {type:'primary'});
+    Toastify({
+        text: "Source code copied to clipboard.",
+        duration: 2000,
+        gravity: "top",
+        position: 'right',
+    }).showToast();
 }
 
 function addListeners() {
-    const collapseButtons = document.getElementsByClassName('collapsible');
+    const collapseButtons = document.getElementsByClassName('g-card');
     for (let i = 0; i < collapseButtons.length; i++) {
         collapseButtons[i].addEventListener('click', function () {
             // collapse all other  items
             var self = this;
-            document.querySelectorAll('.collapsible').forEach((elem) => {
+            document.querySelectorAll('.g-card').forEach((elem) => {
                 if (self != elem) {
                     elem.classList.remove('g-active')
                     elem.nextElementSibling.style.display = 'none';
@@ -71,9 +76,9 @@ request.open('GET', uriBaseApi, true);
 request.onload = function () {
 
     // set language for page
-    var libraryLang = /snippets\/(\w+)/.exec(location.pathname)[1];
-    document.title = 'CodeArtery - Library.' + libraryLang;
-    document.getElementById('libraryLang').innerText = extToLang[libraryLang];
+    var snippetLang = /snippets\/(\w+)/.exec(location.pathname)[1];
+    document.title = 'CodeArtery - Snippet.' + snippetLang;
+    document.getElementById('snippetLang').innerText = extToLang[snippetLang];
 
     var data = JSON.parse(this.response);
     const eParent = document.getElementById('g-parent');
@@ -85,7 +90,7 @@ request.onload = function () {
         var gitName = Object.keys(snip.files)[0];
 
         // only display gist if its language matches the current page
-        if (libraryLang == gitName.slice(gitName.lastIndexOf('.') + 1)) {
+        if (snippetLang == gitName.slice(gitName.lastIndexOf('.') + 1)) {
             
             // create collapsible gist entry from template
             var eContent = eTemplate.content.cloneNode(true);

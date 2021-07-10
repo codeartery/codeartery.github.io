@@ -1,0 +1,71 @@
+.g-card {
+    position: relative;
+    color: var(--c-fg1);
+    padding: 20px 30px;  
+    border: none;
+    text-align: left;
+    outline: none;  
+    transition: 200ms;
+  }
+  
+  .g-active,
+  .g-card:hover {
+    box-shadow: 0px 10px 15px -15px var(--c-bg4);
+    transform: scalex(1.01);
+    cursor: pointer;
+  }
+
+  .g-active {
+    background-color: var(--c-bg2);
+  }
+
+  .g-card:active {
+    transform: scalex(0.99);
+  }
+  
+  .g-content {  
+    padding: 10px 18px;
+    overflow-y: auto;
+    display: none;
+    background-color: var(--c-bg2);
+  }
+  
+  .gist-file {
+    border: none!important;
+  }
+  
+  #g-parent {
+    display: grid;
+    grid-template-columns: 200px auto;
+    justify-items: stretch;
+    align-items: center;
+  }
+
+  .g-child {
+    grid-column-start: 1;    
+    grid-column-end: 3;
+    display: grid;
+    margin-bottom: 5px;
+  }
+  
+  .g-title {
+      font-size: 1.3rem;
+      font-weight: bold;
+      padding-bottom: 1rem;
+  }
+  
+  .g-copy {
+    position: absolute;
+    top: 22px;
+    right: 22px;
+    height: 24px;
+    width: 24px;
+  }
+  
+  .g-copy:hover {
+      opacity: 0.5;
+  }
+  
+  .g-desc {
+    margin-right: 30px;
+  }
