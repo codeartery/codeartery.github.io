@@ -127,7 +127,7 @@ main {
     background-color: var(--c-bg2);
     box-shadow: 0 10px 5px -10px var(--c-bg4);
     padding: 20px 30px;
-    margin: 40px 0;  
+    margin: 40px 0;
 }
 
 @media only screen and (max-width: 600px) {
