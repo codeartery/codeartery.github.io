@@ -21,6 +21,7 @@ body {
     background-color: var(--c-bg1);
     font-family: 'Comfortaa', sans-serif;
     font-size: 1.25rem;
+    scroll-behavior: smooth;
 }
 
 header {
